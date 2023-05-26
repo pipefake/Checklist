@@ -1,0 +1,35 @@
+.li_todoItem{
+    padding: 29px 0px;
+}
+.ul_donelist{
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 172px !important;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+label{
+    display: flex !important;
+    flex-direction: row;
+}
+.text_todoItem{
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 17px !important;
+}
+.text_todoItem>p{
+    margin: 0px;
+    font-size: 12px;
+}
+.text_bold{
+    font-weight: bold;
+
+}
+input{
+    width: 24px;
+    margin: 0px;
+    padding: 0px;
+}
+

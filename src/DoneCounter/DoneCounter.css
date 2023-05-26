@@ -1,0 +1,25 @@
+
+.divTituloDone>h1 { 
+    font-size: 32px;
+    
+    padding: 22px 0px 22px 0Px;
+    margin: 0px;
+}
+
+.divTituloDone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+}
+.divTituloDone>p{
+    font-size: 12px;
+    color: #0088ff;
+    padding: 20px 0px 41px 0Px;
+    margin: 0px;
+    font-weight: 400 !important;
+}
+.text_bold{
+    font-weight: bold;
+
+}
