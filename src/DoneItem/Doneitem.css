@@ -3,9 +3,9 @@
 }
 .ul_donelist{
     list-style: none;
-    margin: 0 !important;
+    margin: 0 ;
     padding: 0 !important;
-    height: 172px !important;
+    height: 172px;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -21,7 +21,7 @@ label{
 }
 .text_todoItem>p{
     margin: 0px;
-    font-size: 12px;
+    
 }
 .text_bold{
     font-weight: bold;

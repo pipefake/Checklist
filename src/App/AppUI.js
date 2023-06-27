@@ -7,59 +7,80 @@ import { DoneCounter } from "../DoneCounter";
 import { TodoItem } from "../TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { DoneItem } from "../DoneItem";
-function AppUI({
-    completedTodos,
-    totalTodos,
-    searchValue,
-    searchedTodos,
-    setSearchValue,
-    completeTodo,
-    deleteTodo,
-    unCompleteTodo,
-    listDoneTodos,
-}) {
+import { TodosLoading } from "../TodosLoading";
+import { TodosError } from "../TodosError";
+import { TodosEmpty } from "../TodosEmpty";
+import { TodoContext } from "../TodoContext";
+import React from "react";
+import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm";
+
+function AppUI() {
+    const {
+        loading,
+        error,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+        unCompleteTodo,
+        listDoneTodos,
+        openModal,
+        setOpenModal,
+    } = React.useContext(TodoContext);
     return (
         <>
             <div className="App">
-                <TodoCounter completed={completedTodos} total={totalTodos} />
-                <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+                <div className="todoDiv">
+                    <TodoCounter />
+                    <TodoSearch />
 
-                <TodoList>
-                    {searchedTodos.map(todo => (
-                        <TodoItem
-                            key={todo.text}
-                            text={todo.text}
-                            completed={todo.completed}
-                            onComplete={() => completeTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
-
-                        />
-                    ))}
-                </TodoList>
+                    <TodoList>
+                        {loading && <TodosLoading />}
+                        {error && <TodosError />}
+                        {!loading && searchedTodos === 0 && <TodosEmpty />}
 
 
+                        {searchedTodos.map(todo => (
+                            <TodoItem
+                                key={todo.text}
+                                text={todo.text}
+                                completed={todo.completed}
+                                onComplete={() => completeTodo(todo.text)}
+                                onDelete={() => deleteTodo(todo.text)}
 
-                <DoneCounter completed={completedTodos} />
-                <DoneList>
-                    {listDoneTodos.map(todo => (
-                        <DoneItem
-                            key={todo.text}
-                            text={todo.text}
-                            completed={todo.completed}
-                            onComplete={() => unCompleteTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
-                        />
-                    ))}
-                </DoneList>
-                <div className="flotante">
-                    {<CreateTodoButton />}
+                            />
+                        ))}
+                    </TodoList>
                 </div>
+                <div>
+                    <DoneCounter />
 
+                    <DoneList>
+                        {listDoneTodos.map(todo => (
+                            <DoneItem
+                                key={todo.text}
+                                text={todo.text}
+                                completed={todo.completed}
+                                onComplete={() => unCompleteTodo(todo.text)}
+                                onDelete={() => deleteTodo(todo.text)}
+                            />
+                        ))}
+                    </DoneList>
+
+
+                </div>
             </div>
+            <CreateTodoButton
+                setOpenModal={setOpenModal}
+            />
+
+            {openModal && (
+                <Modal>
+                    <TodoForm />
+                </Modal>
+            )}
         </>
     );
 }
-
-
 
 export { AppUI };

@@ -1,0 +1,22 @@
+.loader {
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid rgb(60, 60, 60);
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    align-items: center;
+    justify-items: center;
+    margin: 80px 200px;
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 

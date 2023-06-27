@@ -1,4 +1,4 @@
-.stylebtn {
+.CreateTodoButton {
 	font-size: 35px !important;
     text-transform: uppercase !important;
     font-weight: bold !important;
@@ -9,5 +9,5 @@
     position: fixed !important;
     bottom: 32px !important;
     right: 15px !important;
-    z-index: 99 !important;
+    z-index: 2 !important;
 }

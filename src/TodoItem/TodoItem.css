@@ -1,9 +1,10 @@
+
 .li_todoItem{
     padding: 29px 0px !important;
 }
 ul{
     list-style: none !important;
-    margin: 0 !important;
+    margin: 0;
     padding: 0 !important;
     height: 370px;
     overflow: scroll;
@@ -23,10 +24,6 @@ label{
     flex-direction: column;
     align-items: flex-start;
     margin-left: 17px !important;
-}
-.text_todoItem>p{
-    margin: 0px !important;
-    font-size: 12px !important;
 }
 .text_bold{
     font-weight: bold;
@@ -67,8 +64,4 @@ input{
 /* Cambia el radio personalizado cuando es pulsado */
 .otra {
     background-image: url(./radio-check.png);
-}
-p:first-child{
-    font-size: 12px !important;
-    font-weight: 800 !important;
 }
