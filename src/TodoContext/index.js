@@ -21,8 +21,8 @@ function TodoProvider({ children }) {
         const aux = todoText.includes(searchText);
         console.log(aux);
         return aux && !todo.completed;
-    }
-    );
+    });
+
     const listDoneTodos = todos.filter(todo => !!todo.completed);
     const totalTodos = todos.length;
 
@@ -35,11 +35,12 @@ function TodoProvider({ children }) {
         saveTodos(newTodos);
     };
 
-    const addTodo = (text) => {
+    const addTodo = ({ text, time }) => {
         const newTodos = [...todos];
         newTodos.push({
             text,
             completed: false,
+            time,
         });
         saveTodos(newTodos);
     };
@@ -52,6 +53,7 @@ function TodoProvider({ children }) {
         newTodos[todoIndex].completed = false;
         saveTodos(newTodos);
     };
+
     const deleteTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
@@ -60,6 +62,7 @@ function TodoProvider({ children }) {
         newTodos.splice(todoIndex, 1);
         saveTodos(newTodos);
     };
+
     return (
         <TodoContext.Provider value={{
             loading,
@@ -80,6 +83,6 @@ function TodoProvider({ children }) {
             {children}
         </TodoContext.Provider>
     );
-};
+}
 
 export { TodoContext, TodoProvider };

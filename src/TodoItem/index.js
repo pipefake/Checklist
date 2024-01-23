@@ -11,7 +11,7 @@ function TodoItem(props) {
                 ></span>
                 <span className='text_todoItem'>
                     <p className='text_bold'>{props.text}</p>
-                    <p >12:41 PM</p>
+                    <p >{props.time}</p>
                 </span>
                 <span className='btn_close' onClick={props.onDelete}><BiXCircle /></span>
             </label>

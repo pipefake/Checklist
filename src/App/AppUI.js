@@ -44,6 +44,7 @@ function AppUI() {
                             <TodoItem
                                 key={todo.text}
                                 text={todo.text}
+                                time={todo.time}
                                 completed={todo.completed}
                                 onComplete={() => completeTodo(todo.text)}
                                 onDelete={() => deleteTodo(todo.text)}
@@ -60,6 +61,7 @@ function AppUI() {
                             <DoneItem
                                 key={todo.text}
                                 text={todo.text}
+                                time={todo.time}
                                 completed={todo.completed}
                                 onComplete={() => unCompleteTodo(todo.text)}
                                 onDelete={() => deleteTodo(todo.text)}
