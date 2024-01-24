@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Checklist/static/css/main.c3e829ae.css",
-    "main.js": "/Checklist/static/js/main.ee519ab0.js",
+    "main.css": "/Checklist/static/css/main.be4b3819.css",
+    "main.js": "/Checklist/static/js/main.9db18936.js",
     "index.html": "/Checklist/index.html",
     "static/media/platzi.webp": "/Checklist/static/media/platzi.5b31ce99c22184cfdc82.webp",
-    "main.c3e829ae.css.map": "/Checklist/static/css/main.c3e829ae.css.map",
-    "main.ee519ab0.js.map": "/Checklist/static/js/main.ee519ab0.js.map"
+    "main.be4b3819.css.map": "/Checklist/static/css/main.be4b3819.css.map",
+    "main.9db18936.js.map": "/Checklist/static/js/main.9db18936.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3e829ae.css",
-    "static/js/main.ee519ab0.js"
+    "static/css/main.be4b3819.css",
+    "static/js/main.9db18936.js"
   ]
 }
